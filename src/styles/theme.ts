@@ -75,6 +75,13 @@ const components = {
   },
 };
 
+const breakpoints = {
+  sm: "320px",
+  md: "768px",
+  lg: "960px",
+  xl: "1200px",
+}
+
 const font = {
   body: `Inter, Helvetica, sans-serif`,
   heading: `Inter, Helvetica, sans-serif`,
@@ -86,6 +93,7 @@ const overrides = {
   components,
   font,
   styles,
+  breakpoints,
 };
 
 const theme = extendTheme(overrides);

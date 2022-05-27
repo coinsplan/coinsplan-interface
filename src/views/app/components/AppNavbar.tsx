@@ -36,6 +36,7 @@ export default function AppNavbar() {
         fontWeight={600}
         color={useColorModeValue("gray.600", "gray.200")}
         fontSize="lg"
+        fontFamily="Poppins !important"
       >
         Coinsplan
       </Text>
