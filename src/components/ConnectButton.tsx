@@ -2,6 +2,8 @@ import { Box, Button, useColorModeValue } from "@chakra-ui/react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { FC } from "react";
 const CustomConnectButton: FC = () => {
+  const mainBg = useColorModeValue("gray.100", "gray.700")
+
   return (
     <ConnectButton.Custom>
       {({
@@ -57,7 +59,7 @@ const CustomConnectButton: FC = () => {
                 <Box
                   display="flex"
                   gap={4}
-                  bg={useColorModeValue("gray.100", "gray.700")}
+                  bg={mainBg}
                   my="7px"
                   borderRadius="full"
                 >
@@ -97,7 +99,7 @@ const CustomConnectButton: FC = () => {
                   <Button
                     onClick={openAccountModal}
                     type="button"
-                    bg={useColorModeValue("main.400", "main.400")}
+                    bg="main.400"
                     color="white"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
