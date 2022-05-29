@@ -53,6 +53,7 @@ const colors = {
     700: brand700,
     800: brand800,
   },
+  darkBackground: "#0a0b0d"
 };
 
 const components = {
