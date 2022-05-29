@@ -1,8 +1,13 @@
 import { Box, Button, useColorModeValue } from "@chakra-ui/react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { FC } from "react";
-const CustomConnectButton: FC = () => {
-  const mainBg = useColorModeValue("gray.100", "gray.700")
+
+interface ICustomConnectButton {
+  fullWidth?: boolean;
+}
+
+const CustomConnectButton: FC<ICustomConnectButton> = ({ fullWidth }) => {
+  const mainBg = useColorModeValue("gray.100", "gray.700");
 
   return (
     <ConnectButton.Custom>
@@ -36,6 +41,7 @@ const CustomConnectButton: FC = () => {
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
                     size="md"
+                    w={fullWidth ? "full" : "auto"}
                   >
                     Connect Wallet
                   </Button>
