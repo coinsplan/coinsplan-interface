@@ -110,7 +110,7 @@ const SignupPage: FC = () => {
                   <Heading size="sm">What should we call you?</Heading>
                   <Input placeholder="Ex. Beam, Elon Dust" w="full" />
                   <Heading size="sm">Email address</Heading>
-                  <Input placeholder="example@coinsplan.com" w="full" type="email"/>
+                  <Input placeholder="email@example.com" w="full" type="email"/>
                   <Checkbox mt="40px !important" colorScheme="mainNonDynamic">
                     <Text fontSize="14px">
                       I agree to the terms and conditions and privacy policy.

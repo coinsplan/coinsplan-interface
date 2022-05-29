@@ -1,10 +1,13 @@
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Grid, GridItem, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Content from "../src/components/structures/Content";
 import StaticTemplate from "../src/components/structures/StaticTemplate";
 
 const Home: NextPage = () => {
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -26,8 +29,8 @@ const Home: NextPage = () => {
                   </Heading>
                   <Text fontWeight={500}>Short details about Coinsplan Services</Text>
                   <HStack spacing={3}>
-                    <Button colorScheme="main">Schedule now</Button>
-                    <Button>Register your wallet</Button>
+                    <Button colorScheme="mainNonDynamic" onClick={() => router.push("/app/scheduler")}>Schedule now <ArrowForwardIcon ms="10px"/></Button>
+                    <Button onClick={() => router.push("/signup")}>Register your wallet</Button>
                   </HStack>
                 </VStack>
               </Box>
