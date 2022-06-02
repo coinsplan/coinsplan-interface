@@ -7,11 +7,11 @@
 <br />
 <br />
 
-# CoinsPlan Interface
-An open source interface for CoinsPlan, Cryptocurrency Scheduler.
-- Demo at [coinsplan](https://coinsplan.web.app/)
+# Coinsplan Interface
+An open source interface for Coinsplan, Cryptocurrency Scheduler.
+- Demo at [dev.coinsplan](https://dev-coinsplan.web.app/)
 
-## Accessing to CoinsPlan's Scheduler Contract interfaces
+## Accessing to Coinsplan's Scheduler Contract interfaces
 - Please visit [coinsplan-contracts](https://github.com/coinsplan/contracts)
 
 ## Getting Started
