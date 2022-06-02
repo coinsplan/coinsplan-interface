@@ -1,8 +1,7 @@
 <p align="center">
-  <img src="https://github.com/coinsplan/frontend-app/blob/main/src/images/coinsplan-logo-main.png?raw=true" width="50px"/>
+  <img src="https://github.com/coinsplan/resources/blob/main/logos/icon-full.png?raw=true" width="400px"/>
 </p>
-<p align="center"><b>COINSPLAN</b></p>
-<p align="center">Cryptocurrency scheduler for Ethereum and more.</p>
+<p align="center">Cryptocurrency scheduler for EVM base blockchain.</p>
 <p align="center"><b>In development process.</b></p>
 
 <br />
