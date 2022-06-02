@@ -1,34 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="https://github.com/coinsplan/frontend-app/blob/main/src/images/coinsplan-logo-main.png?raw=true" width="50px"/>
+</p>
+<p align="center"><b>COINSPLAN</b></p>
+<p align="center">Cryptocurrency scheduler for Ethereum and more.</p>
+<p align="center"><b>In development process.</b></p>
+
+<br />
+<br />
+
+# CoinsPlan Interface
+An open source interface for CoinsPlan, Cryptocurrency Scheduler.
+- Demo at [coinsplan](https://coinsplan.web.app/)
+
+## Accessing to CoinsPlan's Scheduler Contract interfaces
+- Please visit [coinsplan-contracts](https://github.com/coinsplan/contracts)
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+#### Clonning project
+```shell
+git clone https://github.com/coinsplan/frontend-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+then
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```shell
+cd frontend-app
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### Installing dependencies
+```shell
+yarn
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Running project
+```shell
+yarn start
+```
 
-## Learn More
+#### Format code
+```shell
+yarn format
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### Building static files
+```shell
+yarn build
+```
+## Configurations
+- `.env.development.local` and `.env.production.local` are used for RPC config.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Example**
+```
+REACT_APP_ETH_RPC=https://mainnet.infura.io/...
+REACT_APP_BSC_RPC=https://bsc-dataseed.binance.org/
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Application Configurations in `src/configurations/application.ts` is use for application specific config
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Examples and Default values**
+```ts
+export const defaultChain = 1 // Set dafault chainId for connectors while connecting to wallet web3 provider.
+```
