@@ -55,15 +55,21 @@ const SignupPage: FC = () => {
     <ScreenFixAuthTemplate>
       <Container
         maxW="container.sm"
-        h="100vh"
+        minH="100vh"
         py="6%"
         display="flex"
         justifyContent="center"
       >
         <Flex
           w="full"
-          border="1px solid"
-          borderColor={useColorModeValue("#00000030", "#ffffff30")}
+          border={{
+            sm: "none",
+            md: "1px solid",
+          }}
+          borderColor={{
+            sm: "none",
+            md: useColorModeValue("#00000030", "#ffffff30"),
+          }}
           rounded={20}
           py="10%"
           px="8%"
@@ -85,7 +91,9 @@ const SignupPage: FC = () => {
           ) : null}
 
           <Box>
-            <Heading size="sm" mb="40px">CoinsID</Heading>
+            <Heading size="sm" mb="40px">
+              CoinsID
+            </Heading>
             <Heading
               fontSize="25px"
               fontWeight={700}
@@ -110,7 +118,11 @@ const SignupPage: FC = () => {
                   <Heading size="sm">What should we call you?</Heading>
                   <Input placeholder="Ex. Beam, Elon Dust" w="full" />
                   <Heading size="sm">Email address</Heading>
-                  <Input placeholder="email@example.com" w="full" type="email"/>
+                  <Input
+                    placeholder="email@example.com"
+                    w="full"
+                    type="email"
+                  />
                   <Checkbox mt="40px !important" colorScheme="mainNonDynamic">
                     <Text fontSize="14px">
                       I agree to the terms and conditions and privacy policy.
