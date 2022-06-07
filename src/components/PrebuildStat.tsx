@@ -28,7 +28,7 @@ const PrebuildStat: FC<StatInterface> = ({
   color,
 }) => (
   <VStack spacing={6}>
-  <Box p="15px" rounded="full" bg={withBg !== undefined ? "#00000020" : ""}>
+  <Box p="8px" rounded="full" bg={withBg !== undefined ? "#00000020" : ""}>
     <CircularProgress
       value={(value && total) ? value/total*100 : 100}
       size="120px"
@@ -39,7 +39,7 @@ const PrebuildStat: FC<StatInterface> = ({
       <CircularProgressLabel>{value}</CircularProgressLabel>
     </CircularProgress>
   </Box>
-  <Text>{title}</Text>
+  <Text fontWeight={600}>{title}</Text>
   </VStack>
 );
 export default PrebuildStat;
