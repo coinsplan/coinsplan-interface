@@ -1,18 +1,16 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import {
-  apiProvider,
-  configureChains,
-  getDefaultWallets,
-  RainbowKitProvider,
-} from "@rainbow-me/rainbowkit";
-import { chain, createClient } from "wagmi";
+import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { chain, createClient, configureChains } from "wagmi";
+import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
 export const { chains, provider } = configureChains(
   [chain.polygon],
   [
-    apiProvider.jsonRpc((chain) => ({
-      rpcUrl: `https://rpc-mainnet.matic.network`,
-    })),
+    jsonRpcProvider({
+      rpc: (chain) => ({
+        http: `https://rpc-mainnet.matic.network`,
+      }),
+    }),
   ]
 );
 const { connectors } = getDefaultWallets({

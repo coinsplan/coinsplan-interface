@@ -21,7 +21,7 @@ const config = {
 const styles = {
   global: (props: any) => ({
     body: {
-      bg: mode("white", "#020414")(props),
+      bg: mode("white", "#0a0b0d")(props),
     },
   }),
 };
@@ -42,6 +42,18 @@ const colors = {
     700: brand700,
     800: brand800,
   },
+  mainNonDynamic: {
+    50: brand50,
+    100: brand100,
+    200: brand200,
+    300: brand400,
+    400: brand400,
+    500: brand400,
+    600: brand600,
+    700: brand700,
+    800: brand800,
+  },
+  darkBackground: "#0a0b0d"
 };
 
 const components = {
@@ -51,7 +63,7 @@ const components = {
       _focus: {
         boxShadow: "none",
       },
-      borderRadius: 6,
+      borderRadius: 10,
     },
     sizes: {
       sm: {
@@ -65,6 +77,11 @@ const components = {
       lg: {
         fontSize: "1rem",
         fontWeight: 500,
+      },
+      xl: {
+        fontSize: "1rem",
+        fontWeight: 600,
+        height: "62px",
       },
     },
   },
@@ -80,11 +97,11 @@ const breakpoints = {
   md: "768px",
   lg: "960px",
   xl: "1200px",
-}
+};
 
 const font = {
-  body: `Inter, Helvetica, sans-serif`,
-  heading: `Inter, Helvetica, sans-serif`,
+  body: `Poppins, Helvetica, sans-serif`,
+  heading: `Poppins, Helvetica, sans-serif`,
 };
 
 const overrides = {
