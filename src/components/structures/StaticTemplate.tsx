@@ -9,11 +9,9 @@ const StaticTemplate: FC<IStatisTemplate> = ({ children }) => {
     return (
         <>
             <Navbar />
-            <Box py="8vh">
             {
                 children
             }
-            </Box>
         </>
     )
 }

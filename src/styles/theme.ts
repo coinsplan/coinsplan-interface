@@ -14,8 +14,9 @@ import {
 } from "./color";
 import { mode } from "@chakra-ui/theme-tools";
 const config = {
-  initialColorMode: "light",
+  initialColorMode: "dark",
   useSystemColorMode: false,
+
 };
 
 const styles = {
@@ -63,7 +64,7 @@ const components = {
       _focus: {
         boxShadow: "none",
       },
-      borderRadius: 10,
+      borderRadius: 16,
     },
     sizes: {
       sm: {

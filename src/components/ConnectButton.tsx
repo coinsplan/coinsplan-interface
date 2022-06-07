@@ -1,12 +1,22 @@
-import { Box, Button, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  HStack,
+  Image,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { FC } from "react";
-
+import { MdAccountCircle } from "react-icons/md";
 interface ICustomConnectButton {
   fullWidth?: boolean;
+  height?: string;
 }
 
-const CustomConnectButton: FC<ICustomConnectButton> = ({ fullWidth }) => {
+const CustomConnectButton: FC<ICustomConnectButton> = ({
+  fullWidth,
+  height,
+}) => {
   const mainBg = useColorModeValue("gray.100", "gray.700");
 
   return (
@@ -40,8 +50,9 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({ fullWidth }) => {
                     color="white"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
-                    size="md"
+                    size="lg"
                     w={fullWidth ? "full" : "auto"}
+                    h={height}
                   >
                     Connect Wallet
                   </Button>
@@ -56,68 +67,85 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({ fullWidth }) => {
                     color="white"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
+                    h={height}
                   >
                     Wrong network
                   </Button>
                 );
               }
               return (
-                <Box
-                  display="flex"
-                  gap={4}
-                  bg={mainBg}
-                  my="7px"
-                  borderRadius="full"
-                >
-                  <button
+                <HStack spacing={2}>
+                  <Button
+                    h={height}
                     onClick={openChainModal}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      marginLeft: "10px",
-                      fontSize: "14px",
-                      fontWeight: 600,
-                    }}
-                    type="button"
+                    fontSize="20px"
+                    fontWeight={600}
+                    bg="#ffffff30"
+                    color="#fff"
+                    _hover={{ bg: undefined }}
+                    _active={{ bg: undefined }}
                   >
-                    {chain.hasIcon && (
-                      <div
-                        style={{
-                          background: chain.iconBackground,
-                          width: 12,
-                          height: 12,
-                          borderRadius: 999,
-                          overflow: "hidden",
-                          marginRight: 4,
+                    <HStack spacing={2}>
+                      {chain.hasIcon && (
+                        <Box
+                          style={{
+                            background: chain.iconBackground,
+                            width: 30,
+                            height: 30,
+                            borderRadius: 999,
+                            overflow: "hidden",
+                          }}
+                        >
+                          {chain.iconUrl && (
+                            <Image
+                              alt={chain.name ?? "Chain icon"}
+                              src={chain.iconUrl}
+                              h="30px"
+                            />
+                          )}
+                        </Box>
+                      )}
+                      <Box
+                        as="span"
+                        display={{
+                          sm: "none",
+                          md: "none",
+                          lg: "inline",
                         }}
                       >
-                        {chain.iconUrl && (
-                          <img
-                            alt={chain.name ?? "Chain icon"}
-                            src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
-                          />
-                        )}
-                      </div>
-                    )}
-                    {chain.name}
-                  </button>
+                        {chain.name}
+                      </Box>
+                    </HStack>
+                  </Button>
                   <Button
                     onClick={openAccountModal}
                     type="button"
-                    bg="main.400"
-                    color="white"
+                    bg="#ffffff30"
+                    color="#fff"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
-                    borderRadius="full"
+                    fontSize="20px"
                     fontWeight={600}
+                    h={height}
                   >
-                    {account.displayName}
-                    {/* {account.displayBalance
+                    <HStack spacing={2}>
+                      <MdAccountCircle size="30px" />
+                      <Box
+                        as="span"
+                        display={{
+                          sm: "none",
+                          md: "none",
+                          lg: "inline",
+                        }}
+                      >
+                        {account.displayName}
+                      </Box>
+                      {/* {account.displayBalance
                       ? ` (${account.displayBalance})`
                       : ""} */}
+                    </HStack>
                   </Button>
-                </Box>
+                </HStack>
               );
             })()}
           </div>
