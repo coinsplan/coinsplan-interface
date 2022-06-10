@@ -38,7 +38,7 @@ const HomePage: FC = () => {
                 <Heading fontSize="400%">Crypto</Heading>
                 <Heading fontSize="400%">Arrives</Heading>
                 <Heading
-                  fontSize="500%"
+                  fontSize="400%"
                   color="#00ffef"
                   textShadow="0 0 12px #40fff3a0, 0 0 151px #0fa00070"
                 >

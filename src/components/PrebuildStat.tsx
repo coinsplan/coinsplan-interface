@@ -18,6 +18,8 @@ interface StatInterface {
   total?: number;
   withBg?: boolean;
   color?: string;
+  size?: any;
+  fontSize?: any;
 }
 
 const PrebuildStat: FC<StatInterface> = ({
@@ -26,17 +28,19 @@ const PrebuildStat: FC<StatInterface> = ({
   total,
   withBg,
   color,
+  size,
+  fontSize,
 }) => (
   <VStack spacing={6}>
   <Box p="8px" rounded="full" bg={withBg !== undefined ? "#00000020" : ""}>
     <CircularProgress
       value={(value && total) ? value/total*100 : 100}
-      size="120px"
+      size={size ? size : "100px"}
       color={color}
       trackColor={color ? `${color}30` : "#ffffff30"}
-      thickness="5px"
+      thickness="7px"
     >
-      <CircularProgressLabel>{value}</CircularProgressLabel>
+      <CircularProgressLabel fontSize={fontSize ? fontSize: "40px"}>{value}</CircularProgressLabel>
     </CircularProgress>
   </Box>
   <Text fontWeight={600}>{title}</Text>

@@ -15,9 +15,9 @@ const TransactionTable: FC = () => {
   return (
     <TableContainer my="50px">
       <Table variant="simple" colorScheme="whiteAlpha">
-        <TableCaption color="#fff" opacity={0.6}>
+        {/* <TableCaption color="#fff" opacity={0.6}>
           Tracked transactions from Coinsplan Scheduler V1
-        </TableCaption>
+        </TableCaption> */}
         <Thead>
           <Tr>
             <Th color="#fff">Type</Th>
