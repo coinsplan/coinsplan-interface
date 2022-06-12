@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import DashboardPage from "../../src/views/dev-app/dashboard";
-import SchedulerPage from "../../src/views/dev-app/scheduler";
+import DashboardPage from "../../src/views/app/dashboard";
+import SchedulerPage from "../../src/views/app/scheduler";
 
 const Dashboard: NextPage = () => {
   return (
