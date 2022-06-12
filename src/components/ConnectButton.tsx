@@ -50,9 +50,9 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
                     color="white"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
-                    size="lg"
                     w={fullWidth ? "full" : "auto"}
                     h={height}
+                    fontSize="14px"
                   >
                     Connect Wallet
                   </Button>
@@ -78,9 +78,9 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
                   <Button
                     h={height}
                     onClick={openChainModal}
-                    fontSize="20px"
+                    fontSize="14px"
                     fontWeight={600}
-                    bg="#ffffff30"
+                    bg="#00000030"
                     color="#fff"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
@@ -120,11 +120,11 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
                   <Button
                     onClick={openAccountModal}
                     type="button"
-                    bg="#ffffff30"
+                    bg="#00000030"
                     color="#fff"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
-                    fontSize="20px"
+                    fontSize="14px"
                     fontWeight={600}
                     h={height}
                   >

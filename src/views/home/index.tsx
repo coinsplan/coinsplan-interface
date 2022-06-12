@@ -16,8 +16,12 @@ import {
 import Content from "../../components/structures/Content";
 import StaticTemplate from "../../components/structures/StaticTemplate";
 import Clock from "./Clock";
+import { useRouter } from "next/router";
 
 const HomePage: FC = () => {
+
+  const router = useRouter()
+
   return (
     <StaticTemplate>
       <Content
@@ -57,6 +61,7 @@ const HomePage: FC = () => {
                 w="100%"
                 _hover={{ bg: undefined }}
                 _active={{ bg: undefined }}
+                onClick={() => router.push("/app/scheduler")}
               >
                 Schedule now <ArrowForwardIcon ms="10px" />
               </Button>
@@ -70,6 +75,7 @@ const HomePage: FC = () => {
                 w="100%"
                 _hover={{ bg: undefined }}
                 _active={{ bg: undefined }}
+                onClick={() => router.push("/app/signup")}
               >
                 Register wallet
               </Button>

@@ -60,7 +60,24 @@ a {
 
 .darkmode-calendar::-webkit-calendar-picker-indicator {
   filter: invert(1);
+  transform: scale(1.2);
+  opacity: 0.6;
 }
 .lightmode-calendar::-webkit-calendar-picker-indicator {
   filter: invert(0);
+}
+.datepicker-button {
+
+}
+.darkmode-calendar::-webkit-calendar-picker-indicator::before, .lightmode-calendar::-webkit-calendar-picker-indicator::before {
+  content: "Pick a date";
+}
+
+
+input.scheduler-datetime-picker {
+  color: #ffffff70;
+  background-color: transparent;
+  width: 100%;
+  padding: 0 16px 0 16px;
+  font-weight: 500;
 }

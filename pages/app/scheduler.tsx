@@ -1,18 +1,16 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import Head from "next/head";
-import CoinsplanAppTemplate from "../../src/views/app";
-import SchedulerDisplay from "../../src/views/app/displays/scheduler";
+import SchedulerPage from "../../src/views/app/scheduler";
 
 const Scheduler: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Coinsplan</title>
+        <title>Scheduler</title>
       </Head>
-      <CoinsplanAppTemplate currentDisplay="scheduler">
-        <SchedulerDisplay />
-      </CoinsplanAppTemplate>
+      <SchedulerPage />
     </>
   );
 };
+
 export default Scheduler;

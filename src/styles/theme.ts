@@ -16,7 +16,6 @@ import { mode } from "@chakra-ui/theme-tools";
 const config = {
   initialColorMode: "dark",
   useSystemColorMode: false,
-
 };
 
 const styles = {
@@ -54,7 +53,7 @@ const colors = {
     700: brand700,
     800: brand800,
   },
-  darkBackground: "#0a0b0d"
+  darkBackground: "#0a0b0d",
 };
 
 const components = {
@@ -89,6 +88,19 @@ const components = {
   Heading: {
     baseStyle: {
       fontWeight: 600,
+    },
+  },
+  Input: {
+    baseStyle: {
+      field: {},
+    },
+    variants: {
+      scheduler: {
+        field: {
+          backgroundColor: "#ffffff12",
+          fontWeight: 500,
+        },
+      },
     },
   },
 };
