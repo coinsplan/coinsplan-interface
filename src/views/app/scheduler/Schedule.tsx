@@ -44,8 +44,8 @@ const Schedule: FC = () => {
             />
             <Button
               h="40px"
-              rounded={10}
-              bg="main.500"
+              rounded={14}
+              bg="main.400"
               color="#ffffff"
               fontWeight={500}
               fontSize="16px"
