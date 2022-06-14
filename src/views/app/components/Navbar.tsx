@@ -48,7 +48,7 @@ const Navbar: FC = () => {
             <MenuButton as={Button} color="#fff" bg="#00000030" _hover={{ bg: "#00000060"}} _active={{bg: undefined}} rounded={14} fontSize="22px">
               <HiMenuAlt3 />
             </MenuButton>
-            <MenuList bg="#1a1a1cae" color="#ffffff90" rounded={24} overflow="hidden" fontSize="14px" border="1px solid" borderColor="#030a29">
+            <MenuList bg="#1a1a1cae" color="#ffffff90" rounded={24} overflow="hidden" fontSize="14px" border="1px solid" borderColor="#030a2980">
               <MenuItem _hover={{ bg: "#ffffff10"}} px={6}>CoinsID</MenuItem>
               <MenuItem _hover={{ bg: "#ffffff10"}} px={6}>My transactions</MenuItem>
               <MenuItem _hover={{ bg: "#ffffff10"}} px={6}>Register</MenuItem>

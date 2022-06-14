@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 body {
   padding: 0;
   margin: 0;
@@ -62,22 +62,43 @@ a {
   filter: invert(1);
   transform: scale(1.2);
   opacity: 0.6;
+  cursor: pointer;
+  background-color: #00000020;
+  padding: 8px;
+  border-radius: 12px;
+  transition: 300ms ease;
 }
 .lightmode-calendar::-webkit-calendar-picker-indicator {
   filter: invert(0);
-}
-.datepicker-button {
-
+  cursor: pointer;
+  background-color: #00000020;
+  padding: 8px;
+  border-radius: 12px;
+  transition: 300ms ease;
 }
 .darkmode-calendar::-webkit-calendar-picker-indicator::before, .lightmode-calendar::-webkit-calendar-picker-indicator::before {
   content: "Pick a date";
 }
-
+.darkmode-calendar::-webkit-calendar-picker-indicator:hover, .lightmode-calendar::-webkit-calendar-picker-indicator:hover {
+  box-shadow: 0 0 1px 1px #00000070;
+}
 
 input.scheduler-datetime-picker {
-  color: #ffffff70;
+  color: #606b7e;
   background-color: transparent;
   width: 100%;
   padding: 0 16px 0 16px;
   font-weight: 500;
+  font-size: 20px;
+}
+input.scheduler-datetime-picker:active {
+  border: none;
+  outline: none;
+}
+input.scheduler-datetime-picker:focus {
+  border: none;
+  outline: none;
+}
+input.scheduler-datetime-picker:hover {
+  cursor: pointer;
 }

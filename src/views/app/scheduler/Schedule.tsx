@@ -1,7 +1,9 @@
-import { ChevronDownIcon } from "@chakra-ui/icons";
+import { ArrowDownIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { BiTime } from "react-icons/bi"
 import {
   Box,
   Button,
+  Center,
   Container,
   Flex,
   Heading,
@@ -39,8 +41,10 @@ const Schedule: FC = () => {
               variant="scheduler"
               bg="transparent"
               rounded={18}
-              placeholder="0.00"
-              fontSize="22px"
+              placeholder="0.0"
+              fontWeight={500}
+              fontSize="26px"
+              fontFamily="'DM Mono' !important"
             />
             <Button
               h="40px"
@@ -58,14 +62,34 @@ const Schedule: FC = () => {
               Select a token <ChevronDownIcon fontSize="28px" />
             </Button>
           </Flex>
-          <Input
-            type="text"
-            h="70px"
-            variant="scheduler"
-            fontSize="18px"
-            rounded={18}
-            placeholder="Recipient: 0x..."
-          />
+          <Box w="full" position="relative">
+            <Center
+              position="absolute"
+              top="-5px"
+              right="50%"
+              fontSize="16px"
+              transform="translate(50%,-50%)"
+              bg="#38393d"
+              p="5px"
+              border="4px solid"
+              borderColor="#12141f"
+              zIndex={59}
+              rounded={12}
+              color="#d4e4ff80"
+            >
+              <ArrowDownIcon />
+            </Center>
+            <Input
+              type="text"
+              h="70px"
+              variant="scheduler"
+              rounded={18}
+              placeholder="0x.."
+              fontWeight={500}
+              fontSize="26px"
+              fontFamily="'DM Mono' !important"
+            />
+          </Box>
           <CustomDateTimePicker />
           {account === null ? (
             <PleaseConnectButton />
@@ -80,8 +104,9 @@ const Schedule: FC = () => {
               rounded={18}
               h="70px"
               fontSize="18px"
+              gap={2}
             >
-              Set my payment
+              <BiTime size="26px"/> Set my payment
             </Button>
           )}
         </VStack>
