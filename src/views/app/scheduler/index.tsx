@@ -11,9 +11,7 @@ const SchedulerPage: FC = () => {
         bg="linear-gradient(0deg, rgba(31,28,28,1) 0%, rgba(23,29,54,1) 100%)"
         minH="100vh"
         color="#fff"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
+        display="block"
       >
         <Schedule />
       </Content>

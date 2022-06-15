@@ -33,7 +33,7 @@ const Schedule: FC = () => {
             rounded={18}
             bg="#ffffff12"
             w="full"
-            px="10px"
+            pr="10px"
           >
             <Input
               type="text"
