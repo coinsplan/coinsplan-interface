@@ -9,7 +9,8 @@ interface IContent {
   display?: string;
   justifyContent?: string;
   alignItems?: string;
-  maxW?: string
+  maxW?: string;
+  py?: string | number;
 }
 
 const Content: FC<IContent> = ({
@@ -21,6 +22,7 @@ const Content: FC<IContent> = ({
   justifyContent,
   alignItems,
   maxW,
+  py,
 }) => {
   return (
     <Box bg={bg} minW="100%">
@@ -31,7 +33,7 @@ const Content: FC<IContent> = ({
         justifyContent={justifyContent}
         alignItems={alignItems}
         color={color}
-        py="100px"
+        py={py ? py : "100px"}
       >
         {children}
       </Container>

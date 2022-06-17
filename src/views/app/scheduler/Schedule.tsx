@@ -1,26 +1,57 @@
 import { ArrowDownIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import { BiTime } from "react-icons/bi"
+import { BiTime } from "react-icons/bi";
 import {
   Box,
   Button,
   Center,
   Container,
+  Divider,
   Flex,
   Heading,
   HStack,
   Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
   VStack,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useAccount } from "wagmi";
 import CustomDateTimePicker from "./CustomDateTimePicker";
 import PleaseConnectButton from "./PleaseConnectButton";
 
 const Schedule: FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { data: account } = useAccount();
+
+  const onModalClose = () => setIsModalOpen(false);
 
   return (
     <Container maxW="500px" p={0}>
+      <Modal isOpen={isModalOpen} onClose={onModalClose} isCentered>
+        <ModalOverlay />
+        <ModalContent
+          rounded={22}
+          bg="#1c1d21"
+          color="white"
+          minH="40vh"
+          maxH="600px"
+          border="1px solid"
+          borderColor="#ffffff10"
+        >
+          <ModalHeader>Select a token</ModalHeader>
+          <ModalCloseButton />
+          
+          <VStack spacing={3}>
+
+          </VStack>
+        </ModalContent>
+      </Modal>
       <Box bg="#00000052" rounded={30} w="full" pt="30px" px={2} pb={3}>
         <Heading size="sm" ps={2}>
           Tell us about your plan
@@ -49,8 +80,8 @@ const Schedule: FC = () => {
             <Button
               h="40px"
               rounded={14}
-              bg="main.400"
-              color="#ffffff"
+              bg="gray.700"
+              color="white"
               fontWeight={500}
               fontSize="16px"
               _hover={{ bg: undefined, transform: "scale(1.03)" }}
@@ -58,6 +89,7 @@ const Schedule: FC = () => {
               minW="fit-content"
               px="10px"
               transition="300ms ease"
+              onClick={() => setIsModalOpen(true)}
             >
               Select a token <ChevronDownIcon fontSize="28px" />
             </Button>
@@ -91,6 +123,9 @@ const Schedule: FC = () => {
             />
           </Box>
           <CustomDateTimePicker />
+          <Text px="4px" fontSize="12px" opacity={0.6}>
+            Tap on the input above or the calendar icon to pick a time.
+          </Text>
           {account === null ? (
             <PleaseConnectButton />
           ) : (
@@ -106,7 +141,7 @@ const Schedule: FC = () => {
               fontSize="18px"
               gap={2}
             >
-              <BiTime size="26px"/> Set my payment
+              <BiTime size="26px" /> Set my payment
             </Button>
           )}
         </VStack>
