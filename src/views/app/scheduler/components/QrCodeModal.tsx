@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  Center,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -10,29 +8,15 @@ import {
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
-import { FC, useEffect } from "react";
-import useCamera from "../../../../hooks/useCamera";
+import { FC } from "react";
+import Html5QrcodePlugin from "./Html5QrcodePlugin";
 interface QrCodeModalInterface {
   open: boolean;
   setOpen: any;
 }
 
 const QrCodeModal: FC<QrCodeModalInterface> = ({ open, setOpen }) => {
-  const { videoRef, start, stop} = useCamera();
-
-  useEffect(() => {
-    return () => stop();
-  }, []);
-
-  useEffect(() => {
-    if (open) {
-      start()
-    }
-    else {
-      stop()
-    }
-  }, [open])
-
+  
   return (
     <Modal isOpen={open} onClose={() => setOpen(false)} isCentered>
       <ModalOverlay />
@@ -40,22 +24,17 @@ const QrCodeModal: FC<QrCodeModalInterface> = ({ open, setOpen }) => {
         rounded={22}
         bg="#ffffff"
         color="black"
-        minH="40vh"
         h="fit-content"
         border="1px solid"
         borderColor="#ffffff10"
         overflow="hidden"
       >
-        <ModalHeader>Place QRCode on a camera</ModalHeader>
+        <ModalHeader pb="4px" mb="0px">Place QRCode on a camera</ModalHeader>
+        <ModalBody fontSize="12px" color="#00000080">For the best experiences, we recommended you to use QRCode with black dots and white background.</ModalBody>
         <ModalCloseButton />
 
         <Box position="relative">
-          <video
-            ref={videoRef}
-            autoPlay
-            height="100px"
-            style={{ borderRadius: "10px" }}
-          />
+          <Html5QrcodePlugin onClose={() => setOpen(false)}/>
         </Box>
       </ModalContent>
     </Modal>
