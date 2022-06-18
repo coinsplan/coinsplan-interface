@@ -8,9 +8,9 @@ const SchedulerPage: FC = () => {
   return (
     <AppTemplate>
       <Content
-        bg="linear-gradient(0deg, rgba(31,28,28,1) 0%, rgba(23,29,54,1) 100%)"
+        bg="linear-gradient(20deg, rgba(248,254,255,1) 0%, rgba(227,232,255,1) 100%)"
         minH="100vh"
-        color="#fff"
+        color="black"
         display="block"
       >
         <Schedule />

@@ -55,7 +55,7 @@ const SignupPage: FC = () => {
     <ScreenFixAuthTemplate>
       <Container
         maxW="container.sm"
-        h="100vh"
+        minH="100vh"
         py="6%"
         display="flex"
         justifyContent="center"
@@ -85,7 +85,7 @@ const SignupPage: FC = () => {
           ) : null}
 
           <Box>
-            <Heading size="sm" mb="40px">CoinsID</Heading>
+            {/* <Heading size="sm" mb="40px">CoinsID</Heading> */}
             <Heading
               fontSize="25px"
               fontWeight={700}

@@ -50,10 +50,11 @@ const HomePage: FC = () => {
               size="lg"
               w={{ sm: "full", lg: "auto" }}
               colorScheme="mainNonDynamic"
+              onClick={() => router.push("/app/scheduler")}
             >
               Schedule now
             </Button>
-            <Button size="lg" w={{ sm: "full", lg: "auto" }}>
+            <Button size="lg" w={{ sm: "full", lg: "auto" }} onClick={() => router.push("/signup")}>
               Register wallet
             </Button>
           </HStack>

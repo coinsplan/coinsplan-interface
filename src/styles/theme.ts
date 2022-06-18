@@ -97,8 +97,11 @@ const components = {
     variants: {
       scheduler: {
         field: {
-          backgroundColor: "#ffffff12",
+          backgroundColor: "#0000000a",
           fontWeight: 500,
+          _placeholder: {
+            color: "#00000030",
+          },
         },
       },
     },

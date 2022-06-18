@@ -9,6 +9,7 @@ import {
   Flex,
   Heading,
   HStack,
+  IconButton,
   Input,
   Modal,
   ModalBody,
@@ -24,9 +25,11 @@ import { FC, useState } from "react";
 import { useAccount } from "wagmi";
 import CustomDateTimePicker from "./CustomDateTimePicker";
 import PleaseConnectButton from "./PleaseConnectButton";
-
+import { IoScanSharp } from "react-icons/io5";
+import QrCodeModal from "./components/QrcodeModal";
 const Schedule: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isQrCodeModalOpen, setIsQrCodeModalOpen] = useState(false);
   const { data: account } = useAccount();
 
   const onModalClose = () => setIsModalOpen(false);
@@ -37,8 +40,8 @@ const Schedule: FC = () => {
         <ModalOverlay />
         <ModalContent
           rounded={22}
-          bg="#1c1d21"
-          color="white"
+          bg="#ffffff"
+          color="black"
           minH="40vh"
           maxH="600px"
           border="1px solid"
@@ -46,13 +49,13 @@ const Schedule: FC = () => {
         >
           <ModalHeader>Select a token</ModalHeader>
           <ModalCloseButton />
-          
-          <VStack spacing={3}>
 
-          </VStack>
+          <VStack spacing={3}></VStack>
         </ModalContent>
       </Modal>
-      <Box bg="#00000052" rounded={30} w="full" pt="30px" px={2} pb={3}>
+      <QrCodeModal open={isQrCodeModalOpen} setOpen={setIsQrCodeModalOpen} />
+
+      <Box bg="#ffffff" rounded={30} w="full" pt="30px" px={2} pb={3}>
         <Heading size="sm" ps={2}>
           Tell us about your plan
         </Heading>
@@ -62,7 +65,7 @@ const Schedule: FC = () => {
             alignItems="center"
             h="70px"
             rounded={18}
-            bg="#ffffff12"
+            bg="#0000000a"
             w="full"
             pr="10px"
           >
@@ -80,8 +83,8 @@ const Schedule: FC = () => {
             <Button
               h="40px"
               rounded={14}
-              bg="gray.700"
-              color="white"
+              bg="white"
+              color="black"
               fontWeight={500}
               fontSize="16px"
               _hover={{ bg: undefined, transform: "scale(1.03)" }}
@@ -101,26 +104,45 @@ const Schedule: FC = () => {
               right="50%"
               fontSize="16px"
               transform="translate(50%,-50%)"
-              bg="#38393d"
+              bg="#f0f0f0"
               p="5px"
               border="4px solid"
-              borderColor="#12141f"
+              borderColor="white"
               zIndex={59}
               rounded={12}
-              color="#d4e4ff80"
+              color="black"
             >
               <ArrowDownIcon />
             </Center>
-            <Input
-              type="text"
+            <Flex
+              justifyContent="space-between"
+              alignItems="center"
               h="70px"
-              variant="scheduler"
               rounded={18}
-              placeholder="0x.."
-              fontWeight={500}
-              fontSize="26px"
-              fontFamily="'DM Mono' !important"
-            />
+              bg="#0000000a"
+              w="full"
+              pr="10px"
+            >
+              <Input
+                type="text"
+                h="70px"
+                variant="scheduler"
+                bg="transparent"
+                rounded={18}
+                placeholder="0x.."
+                fontWeight={500}
+                fontSize="26px"
+                fontFamily="'DM Mono' !important"
+              />
+              <IconButton
+                aria-label="qrcode-scanner"
+                bg="transparent"
+                _hover={{ bg: "#00000010" }}
+                onClick={() => setIsQrCodeModalOpen(true)}
+              >
+                <IoScanSharp size="28px" />
+              </IconButton>
+            </Flex>
           </Box>
           <CustomDateTimePicker />
           <Text px="4px" fontSize="12px" opacity={0.6}>
