@@ -26,7 +26,8 @@ import { useAccount } from "wagmi";
 import CustomDateTimePicker from "./CustomDateTimePicker";
 import PleaseConnectButton from "./PleaseConnectButton";
 import { IoScanSharp } from "react-icons/io5";
-import QrCodeModal from "./components/QrcodeModal";
+import QrCodeModal from "./components/QrCodeModal";
+
 const Schedule: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isQrCodeModalOpen, setIsQrCodeModalOpen] = useState(false);
