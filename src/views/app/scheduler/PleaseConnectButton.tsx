@@ -33,8 +33,8 @@ const PleaseConnectButton: FC<ICustomConnectButton> = ({
           <Button
             w="full"
             h="70px"
-            bg="#1346d130"
-            color="main.300"
+            bg="#1346d120"
+            color="main.500"
             _hover={{bg: undefined}}
             _active={{bg: undefined}}
             onClick={openConnectModal}
