@@ -1,5 +1,6 @@
 import {
   Box,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -30,7 +31,7 @@ const QrCodeModal: FC<QrCodeModalInterface> = ({ open, setOpen }) => {
         overflow="hidden"
       >
         <ModalHeader pb="4px" mb="0px">Place QRCode on a camera</ModalHeader>
-        <ModalBody fontSize="12px" color="#00000080">For the best experiences, we recommended you to use QRCode with black dots and white background.</ModalBody>
+        <ModalBody fontSize="12px" color="#00000080">For the best experiences, we recommended you to use QRCode with black dots and white background. <Link>Learn more about QR Code scanner.</Link></ModalBody>
         <ModalCloseButton />
 
         <Box position="relative">

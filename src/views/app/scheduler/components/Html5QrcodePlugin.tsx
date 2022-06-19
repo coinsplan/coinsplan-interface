@@ -21,7 +21,7 @@ const Html5QrcodePlugin: FC<Html5QrcodePluginInterface> = ({ onClose }) => {
   const startScanner = () => {
     const config = { fps: 10 };
     html5Qrcode.current?.start(
-      { facingMode: "user" },
+      { facingMode: "environment" },
       config,
       qrCodeSuccessCallback,
       qrCodeErrorCallback

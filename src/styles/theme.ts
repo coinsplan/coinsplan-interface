@@ -90,6 +90,11 @@ const components = {
       fontWeight: 600,
     },
   },
+  Link: {
+    baseStyle: {
+      color: "main.500"
+    }
+  },
   Input: {
     baseStyle: {
       field: {},
