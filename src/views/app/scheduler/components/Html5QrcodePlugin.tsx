@@ -1,4 +1,13 @@
-import { Box, Button, Center, CircularProgress, Flex, Heading, ModalBody, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  CircularProgress,
+  Flex,
+  Heading,
+  ModalBody,
+  Text,
+} from "@chakra-ui/react";
 import { FC, useEffect, useRef, useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 import { ethers } from "ethers";
@@ -6,13 +15,20 @@ import { shortenAddress } from "../../../../utils/address";
 
 interface Html5QrcodePluginInterface {
   onClose: () => void;
+  setScannedAddress: any;
+  isScannerOpen: boolean;
+  setIsScannerOpen: any;
 }
 
-const Html5QrcodePlugin: FC<Html5QrcodePluginInterface> = ({ onClose }) => {
+const Html5QrcodePlugin: FC<Html5QrcodePluginInterface> = ({
+  onClose,
+  setScannedAddress,
+  isScannerOpen,
+  setIsScannerOpen,
+}) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [flip, setFlip] = useState<boolean>(false);
-  const [isScannerOpen, setIsScannerOpen] = useState(true)
-  const [scannedAddress, setScannedAddress] = useState<string>();
+
   const html5Qrcode = useRef<Html5Qrcode>();
 
   const findETHAddress = (str: string): string | undefined => {
@@ -29,9 +45,9 @@ const Html5QrcodePlugin: FC<Html5QrcodePluginInterface> = ({ onClose }) => {
 
   const qrCodeSuccessCallback = (decodedText: string, decodedResult: any) => {
     const scannedAddress = findETHAddress(decodedText);
-    setScannedAddress(scannedAddress)
+    setScannedAddress(scannedAddress);
     clearScanner();
-    setIsScannerOpen(false)
+    setIsScannerOpen(false);
   };
 
   const qrCodeErrorCallback = () => {};
@@ -76,17 +92,6 @@ const Html5QrcodePlugin: FC<Html5QrcodePluginInterface> = ({ onClose }) => {
     <>
       {!isScannerOpen ? (
         <ModalBody>
-          {
-            scannedAddress ? (
-              <Box gap="10px">
-              <Heading size="md">We found this address</Heading>
-              <Text>Please recheck the address before continue the progress.</Text>
-              <Text fontFamily="'DM Mono' !important" p="5px" bg="gray.100" rounded={4}>{shortenAddress(scannedAddress)}</Text>
-              </Box>
-            ): (
-              <Heading size="md">{"We can't find any address 🤔"}</Heading>
-            )
-          }
         </ModalBody>
       ) : null}
 
@@ -99,11 +104,17 @@ const Html5QrcodePlugin: FC<Html5QrcodePluginInterface> = ({ onClose }) => {
           right="6px"
           zIndex={56}
           onClick={() => setFlip(!flip)}
-          opacity={0.6}
+          opacity={0.7}
         >
           Flip video
         </Button>
-        <Box id="scanner-1" className={flip ? "flip" : ""} zIndex={55} />
+        <Box
+          id="scanner-1"
+          className={flip ? "flip" : ""}
+          zIndex={55}
+          rounded={6}
+          overflow="hidden"
+        />
       </Box>
     </>
   );
