@@ -53,7 +53,7 @@ const colors = {
     700: brand700,
     800: brand800,
   },
-  darkBackground: "#0a0b0d"
+  darkBackground: "#0a0b0d",
 };
 
 const components = {
@@ -63,7 +63,7 @@ const components = {
       _focus: {
         boxShadow: "none",
       },
-      borderRadius: 10,
+      borderRadius: 16,
     },
     sizes: {
       sm: {
@@ -88,6 +88,27 @@ const components = {
   Heading: {
     baseStyle: {
       fontWeight: 600,
+    },
+  },
+  Link: {
+    baseStyle: {
+      color: "main.500"
+    }
+  },
+  Input: {
+    baseStyle: {
+      field: {},
+    },
+    variants: {
+      scheduler: {
+        field: {
+          backgroundColor: "#0000000a",
+          fontWeight: 500,
+          _placeholder: {
+            color: "#00000030",
+          },
+        },
+      },
     },
   },
 };

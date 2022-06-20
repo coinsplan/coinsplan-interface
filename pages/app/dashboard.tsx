@@ -1,16 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import DashboardPage from "../../src/views/app/dashboard";
 import SchedulerPage from "../../src/views/app/scheduler";
 
-const Scheduler: NextPage = () => {
+const Dashboard: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Scheduler</title>
+        <title>Coinsplan Dashboard</title>
       </Head>
-      <SchedulerPage />
+      <DashboardPage />
     </>
   );
 };
 
-export default Scheduler;
+export default Dashboard;

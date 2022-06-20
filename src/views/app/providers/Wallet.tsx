@@ -1,9 +1,4 @@
-import { useColorMode } from "@chakra-ui/react";
-import {
-  RainbowKitProvider,
-  darkTheme,
-  lightTheme,
-} from "@rainbow-me/rainbowkit";
+import { RainbowKitProvider, lightTheme } from "@rainbow-me/rainbowkit";
 import { FC } from "react";
 
 import { WagmiConfig } from "wagmi";
@@ -14,13 +9,9 @@ interface IWalletProvider {
 }
 
 const WalletProvider: FC<IWalletProvider> = ({ children }) => {
-  const { colorMode } = useColorMode();
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider
-        chains={chains}
-        theme={colorMode === "light" ? lightTheme() : darkTheme()}
-      >
+      <RainbowKitProvider chains={chains} theme={lightTheme()}>
         {children}
       </RainbowKitProvider>
     </WagmiConfig>
