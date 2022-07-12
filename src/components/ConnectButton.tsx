@@ -80,8 +80,8 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
                     onClick={openChainModal}
                     fontSize="14px"
                     fontWeight={600}
-                    bg="#00000030"
-                    color="#fff"
+                    bg="gray.100"
+                    color="#000"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
                   >
@@ -120,8 +120,8 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
                   <Button
                     onClick={openAccountModal}
                     type="button"
-                    bg="#00000030"
-                    color="#fff"
+                    bg="gray.100"
+                    color="#000"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
                     fontSize="14px"

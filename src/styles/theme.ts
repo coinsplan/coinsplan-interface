@@ -63,7 +63,7 @@ const components = {
       _focus: {
         boxShadow: "none",
       },
-      borderRadius: 16,
+      borderRadius: 10,
     },
     sizes: {
       sm: {

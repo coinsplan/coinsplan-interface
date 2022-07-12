@@ -14,7 +14,8 @@ import {
 } from "@chakra-ui/react";
 import { FC } from "react";
 import CustomConnectButton from "../../../components/ConnectButton";
-import { HiMenuAlt3 } from "react-icons/hi";
+import { FiMenu } from "react-icons/fi";
+import TransactionSearchBar from "../../../components/TransactionSearchBar";
 const Navbar: FC = () => {
   return (
     <Box
@@ -23,10 +24,13 @@ const Navbar: FC = () => {
       left={0}
       right={0}
       zIndex={70}
-      bg="#d9e5ff0a"
+      bg="#ffffffaf"
       h="60px"
       px="20px"
-      backdropFilter="blur(4px)"
+      border="solid"
+      borderColor="gray.100"
+      borderWidth="0 0 1px 0"
+      backdropFilter="blur(6px)"
     >
       <Flex
         justifyContent="space-between"
@@ -43,17 +47,44 @@ const Navbar: FC = () => {
           ></Image>
         </Box>
         <HStack>
+          <Box display={{sm: "none", md: "block"}}>
+            <TransactionSearchBar />
+          </Box>
           <CustomConnectButton height="40px" />
           <Menu autoSelect={false}>
-            <MenuButton as={Button} color="#fff" bg="#00000030" _hover={{ bg: "#00000060"}} _active={{bg: undefined}} rounded={14} fontSize="22px">
-              <HiMenuAlt3 />
+            <MenuButton
+              as={Box}
+              color="#000"
+              bg="transparent"
+              _hover={{ bg: "#00000010" }}
+              _active={{ bg: undefined }}
+              rounded={14}
+              fontSize="20px"
+              p="10px"
+              cursor="pointer"
+            >
+              <FiMenu />
             </MenuButton>
-            <MenuList bg="#1a1a1c" color="#ffffff90" rounded={24} overflow="hidden" fontSize="14px" border="1px solid" borderColor="#030a2980">
-              <MenuItem _hover={{ bg: "#ffffff10"}} px={6}>CoinsID</MenuItem>
-              <MenuItem _hover={{ bg: "#ffffff10"}} px={6}>My transactions</MenuItem>
-              <MenuItem _hover={{ bg: "#ffffff10"}} px={6}>Register</MenuItem>
-              <MenuItem _hover={{ bg: "#ffffff10"}} px={6}>Docs</MenuItem>
-              <MenuItem _hover={{ bg: "#ffffff10"}} px={6}>About</MenuItem>
+            <MenuList
+              bg="#fff"
+              color="gray.700"
+              rounded={10}
+              overflow="hidden"
+              fontSize="14px"
+              boxShadow="#00000020"
+            >
+              <MenuItem _hover={{ bg: "#00000010" }} px={6}>
+                My Transactions
+              </MenuItem>
+              <MenuItem _hover={{ bg: "#00000010" }} px={6}>
+                Register
+              </MenuItem>
+              <MenuItem _hover={{ bg: "#00000010" }} px={6}>
+                Docs
+              </MenuItem>
+              <MenuItem _hover={{ bg: "#00000010" }} px={6}>
+                About
+              </MenuItem>
             </MenuList>
           </Menu>
         </HStack>

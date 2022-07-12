@@ -8,7 +8,7 @@ const SchedulerPage: FC = () => {
   return (
     <AppTemplate>
       <Content
-        bg="#f2f4f5"
+        bg="#fff"
         minH="100vh"
         color="black"
         display="block"

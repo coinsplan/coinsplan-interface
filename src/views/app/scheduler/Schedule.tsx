@@ -56,7 +56,7 @@ const Schedule: FC = () => {
       </Modal>
       <QrCodeModal open={isQrCodeModalOpen} setOpen={setIsQrCodeModalOpen} />
 
-      <Box bg="#ffffff" rounded={30} w="full" pt="30px" px={2} pb={3} boxShadow="0 20px 40px #00000020">
+      <Box bg="#ffffff" rounded={20} w="full" pt="30px" px={2} pb={3} boxShadow="0 20px 40px #00000020">
         <Heading size="sm" ps={2}>
           Tell us about your plan
         </Heading>

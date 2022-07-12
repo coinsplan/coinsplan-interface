@@ -27,6 +27,7 @@ const Content: FC<IContent> = ({
   return (
     <Box bg={bg} minW="100%">
       <Container
+        position="relative"
         maxW={maxW ? maxW : "container.xl"}
         minH={minH}
         display={display}
