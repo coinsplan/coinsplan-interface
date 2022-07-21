@@ -19,6 +19,7 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
+  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import { FC, useState } from "react";
@@ -34,6 +35,12 @@ const Schedule: FC = () => {
   const { data: account } = useAccount();
 
   const onModalClose = () => setIsModalOpen(false);
+
+  const styles = {
+    boxBg: useColorModeValue("white", "gray.900"),
+    boxShadow: useColorModeValue("0 20px 40px #00000020", "0 20px 40px #1f366b30"),
+    inputBg: useColorModeValue("gray.100", "gray.800"),
+  }
 
   return (
     <Container maxW="500px" p={0}>
@@ -56,7 +63,7 @@ const Schedule: FC = () => {
       </Modal>
       <QrCodeModal open={isQrCodeModalOpen} setOpen={setIsQrCodeModalOpen} />
 
-      <Box bg="#ffffff" rounded={20} w="full" pt="30px" px={2} pb={3} boxShadow="0 20px 40px #00000020">
+      <Box bg={styles.boxBg} rounded={20} w="full" pt="30px" px={2} pb={3} boxShadow={styles.boxShadow}>
         <Heading size="sm" ps={2}>
           Tell us about your plan
         </Heading>
@@ -66,7 +73,7 @@ const Schedule: FC = () => {
             alignItems="center"
             h="70px"
             rounded={18}
-            bg="#0000000a"
+            bg={styles.inputBg}
             w="full"
             pr="10px"
           >
@@ -120,7 +127,7 @@ const Schedule: FC = () => {
               alignItems="center"
               h="70px"
               rounded={18}
-              bg="#0000000a"
+              bg={styles.inputBg}
               w="full"
               pr="10px"
             >
@@ -154,8 +161,7 @@ const Schedule: FC = () => {
           ) : (
             <Button
               type="button"
-              bg="main.400"
-              color="white"
+              colorScheme="main"
               _hover={{ bg: undefined }}
               _active={{ bg: undefined }}
               w="full"

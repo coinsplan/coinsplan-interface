@@ -80,7 +80,7 @@ const SignupPage: FC = () => {
               top={0}
               left={0}
               right={0}
-              colorScheme="mainNonDynamic"
+              colorScheme="main"
             />
           ) : null}
 
@@ -111,7 +111,7 @@ const SignupPage: FC = () => {
                   <Input placeholder="Ex. Beam, Elon Dust" w="full" />
                   <Heading size="sm">Email address</Heading>
                   <Input placeholder="email@example.com" w="full" type="email"/>
-                  <Checkbox mt="40px !important" colorScheme="mainNonDynamic">
+                  <Checkbox mt="40px !important" colorScheme="main">
                     <Text fontSize="14px">
                       I agree to the terms and conditions and privacy policy.
                     </Text>

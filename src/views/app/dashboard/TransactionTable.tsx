@@ -1,69 +1,55 @@
-import {
-  Link,
-  Table,
-  TableCaption,
-  TableContainer,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
 import { FC } from "react";
+import TransactionCard from "./components/TransactionCard";
+
+const sampleTransactions = [
+  {
+    txId: "7f6f0a97ef69fae75e3f3a53e657a6f79a8",
+    from: {
+      address: "0xef2a3d4f567a8f8aea65d43fe4a986cc",
+      name: "Me",
+    },
+    to: {
+      address: "0xef2a3d4f567a8f8aea65d43fe4a986cc",
+      name: "Grab Holdings Inc.",
+    },
+    time: "",
+    state: 2,
+  },
+  {
+    txId: "7f6f0a97ef69fae75e3f3a53e657a6f79a8",
+    from: {
+      address: "0xef2a3d4f567a8f8aea65d43fe4a986cc",
+      name: "Me",
+    },
+    to: {
+      address: "0xef2a3d4f567a8f8aea65d43fe4a986cc",
+      name: "Spotify Technology S.A.",
+    },
+    time: "",
+    state: 1,
+  },
+  {
+    txId: "7f6f0a97ef69fae75e3f3a53e657a6f79a8",
+    from: {
+      address: "0xef2a3d4f567a8f8aea65d43fe4a986cc",
+      name: "Me",
+    },
+    to: {
+      address: "0xef2a3d4f567a8f8aea65d43fe4a986cc",
+      name: "Coinbase Global, Inc.",
+    },
+    time: "",
+    state: 2,
+  },
+];
 
 const TransactionTable: FC = () => {
   return (
-    <TableContainer my="50px">
-      <Table variant="simple" colorScheme="whiteAlpha">
-        {/* <TableCaption color="#fff" opacity={0.6}>
-          Tracked transactions from Coinsplan Scheduler V1
-        </TableCaption> */}
-        <Thead>
-          <Tr>
-            <Th color="#fff">Type</Th>
-            <Th color="#fff">To</Th>
-            <Th color="#fff" isNumeric>
-              Amount
-            </Th>
-            <Th color="#fff" isNumeric>
-              Fee
-            </Th>
-            <Th color="#fff" isNumeric>
-              At
-            </Th>
-          </Tr>
-        </Thead>
-        <Tbody>
-          <Tr>
-            <Td color="#3bffb4" fontWeight={600}>TRANSFER</Td>
-            <Td maxW="150px" textOverflow="ellipsis" overflow="hidden">
-              <Link href="/">0x8FA5289085FE60939D80db11d44FaCC742533b8E</Link>
-            </Td>
-            <Td isNumeric>25.4 MATIC</Td>
-            <Td isNumeric>1</Td>
-            <Td isNumeric>{new Date(Date.now()).toLocaleString()}</Td>
-          </Tr>
-          <Tr>
-            <Td color="#3bffb4" fontWeight={600}>TRANSFER</Td>
-            <Td maxW="150px" textOverflow="ellipsis" overflow="hidden">
-              <Link href="/">0x8FA5289085FE60939D80db11d44FaCC742533b8E</Link>
-            </Td>
-            <Td isNumeric>7.2 BNB</Td>
-            <Td isNumeric>1</Td>
-            <Td isNumeric>{new Date(Date.now()).toLocaleString()}</Td>
-          </Tr>
-          <Tr>
-            <Td color="#82daff" fontWeight={600}>SUBSCRIPTION</Td>
-            <Td maxW="150px" textOverflow="ellipsis" overflow="hidden">
-              <Link href="/">0x8FA5289085FE60939D80db11d44FaCC742533b8E</Link>
-            </Td>
-            <Td isNumeric>3.99 BUSD</Td>
-            <Td isNumeric>1</Td>
-            <Td isNumeric>{new Date(Date.now()).toLocaleString()}</Td>
-          </Tr>
-        </Tbody>
-      </Table>
-    </TableContainer>
+    <>
+      {sampleTransactions.map((tx, index) => (
+        <TransactionCard key={index} tx={tx} />
+      ))}
+    </>
   );
 };
 export default TransactionTable;

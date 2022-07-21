@@ -1,13 +1,7 @@
-import { FC, useEffect, useRef, useState } from "react";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { FC } from "react";
 import {
   Box,
   Button,
-  Center,
-  CircularProgress,
-  CircularProgressLabel,
-  Grid,
-  GridItem,
   Heading,
   HStack,
   Text,
@@ -25,7 +19,6 @@ const HomePage: FC = () => {
   return (
     <StaticTemplate>
       <Content
-        bg="#fff"
         minH="100vh"
         display="flex"
         justifyContent="center"
@@ -49,7 +42,7 @@ const HomePage: FC = () => {
             <Button
               size="lg"
               w={{ sm: "full", lg: "auto" }}
-              colorScheme="mainNonDynamic"
+              colorScheme="main"
               onClick={() => router.push("/app/scheduler")}
             >
               Schedule now
@@ -60,26 +53,28 @@ const HomePage: FC = () => {
           </HStack>
         </VStack>
       </Content>
-      <Content maxW="1800px" bg="#ffffff" py="10px">
+      <Content maxW="1800px" py="10px">
         <Box w="full" rounded={14} minH="100vh" bg="#00000010" p="20px"></Box>
       </Content>
-      <Content maxW="1800px" bg="#ffffff" py="10px">
+      <Content maxW="1800px" py="10px">
         <SchedulerBanner />
       </Content>
-      <Content maxW="1800px" bg="#ffffff" py="10px">
+      <Content maxW="1800px" py="10px">
         <Box
           w="full"
           rounded={14}
-          minH="100vh"
+          h="100vh"
+          maxH="700px"
           bg="linear-gradient(90deg, rgba(66,230,240,1) 0%, rgba(35,106,166,1) 100%)"
           p="20px"
         ></Box>
       </Content>
-      <Content maxW="1800px" bg="#ffffff" py="10px">
+      <Content maxW="1800px" py="10px">
         <Box
           w="full"
           rounded={14}
-          minH="100vh"
+          h="100vh"
+          maxH="700px"
           bg="linear-gradient(90deg, rgba(110,60,255,1) 0%, rgba(75,13,155,1) 100%)"
           p="20px"
         ></Box>

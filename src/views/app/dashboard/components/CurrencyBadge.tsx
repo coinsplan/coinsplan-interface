@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { FC, Fragment } from "react";
 
 interface CurrencyBadgeProps {
@@ -6,6 +6,11 @@ interface CurrencyBadgeProps {
 }
 
 const CurrencyBadge: FC<CurrencyBadgeProps> = ({ imageUrl }) => {
+  const currencyBadgeStyles = {
+    bg: useColorModeValue("gray.50", "gray.800"),
+    borderColor: useColorModeValue("gray.100", "gray.700"),
+    color: useColorModeValue("black", "white")
+  }
   return (
     <Fragment>
       <Flex
@@ -13,12 +18,13 @@ const CurrencyBadge: FC<CurrencyBadgeProps> = ({ imageUrl }) => {
         py={1}
         pe={3}
         mt={2}
-        bg="gray.50"
-        rounded="full"
+        color={currencyBadgeStyles.color}
+        bg={currencyBadgeStyles.bg}
+        rounded={6}
         justifyContent="space-between"
         alignItems="center"
         border="1px solid"
-        borderColor="gray.100"
+        borderColor={currencyBadgeStyles.borderColor}
       >
         <Flex gap={2} alignItems="center">
           <Image
@@ -26,11 +32,11 @@ const CurrencyBadge: FC<CurrencyBadgeProps> = ({ imageUrl }) => {
             alt="crypto"
             h="30px"
           />
-          <Text color="black" fontWeight={500} fontSize={14}>
+          <Text fontWeight={500} fontSize={14}>
             MATIC
           </Text>
         </Flex>
-        <Text color="black" fontWeight={500} fontSize={14}>
+        <Text fontWeight={500} fontSize={14}>
           2318.22
         </Text>
       </Flex>

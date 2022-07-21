@@ -16,7 +16,8 @@ const SchedulerBanner: FC = () => {
     <Box
       w="full"
       rounded={14}
-      minH="100vh"
+      h="100vh"
+      maxH="700px"
       bg="linear-gradient(90deg, rgba(55,99,254,1) 0%, rgba(35,71,166,1) 100%)"
       p="5%"
       position="relative"
@@ -32,6 +33,8 @@ const SchedulerBanner: FC = () => {
         <VStack alignItems="start" gap={8}>
           <Heading
             color="#fff"
+            fontWeight={700}
+            letterSpacing="-3px"
             mt="40px"
             fontSize={{ sm: "34px", md: "60px" }}
             maxW="400px"

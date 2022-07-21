@@ -17,8 +17,10 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
   fullWidth,
   height,
 }) => {
-  const mainBg = useColorModeValue("gray.100", "gray.700");
-
+  const buttonStyles = {
+    buttonBg: useColorModeValue("gray.100", "gray.700"),
+    buttonColor: useColorModeValue("black", "white"),
+  };
   return (
     <ConnectButton.Custom>
       {({
@@ -80,8 +82,8 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
                     onClick={openChainModal}
                     fontSize="14px"
                     fontWeight={600}
-                    bg="gray.100"
-                    color="#000"
+                    bg={buttonStyles.buttonBg}
+                    color={buttonStyles.buttonColor}
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
                   >
@@ -120,8 +122,8 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
                   <Button
                     onClick={openAccountModal}
                     type="button"
-                    bg="gray.100"
-                    color="#000"
+                    bg={buttonStyles.buttonBg}
+                    color={buttonStyles.buttonColor}
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}
                     fontSize="14px"

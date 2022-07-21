@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, useColorModeValue } from "@chakra-ui/react";
 import {
   brand,
   brand100,
@@ -21,7 +21,7 @@ const config = {
 const styles = {
   global: (props: any) => ({
     body: {
-      bg: mode("white", "#0a0b0d")(props),
+      bg: mode("white", "gray.900")(props),
     },
   }),
 };
@@ -42,14 +42,14 @@ const colors = {
     700: brand700,
     800: brand800,
   },
-  mainNonDynamic: {
+  mainFix: {
     50: brand50,
     100: brand100,
     200: brand200,
     300: brand400,
     400: brand400,
     500: brand400,
-    600: brand600,
+    600: brand400,
     700: brand700,
     800: brand800,
   },
@@ -102,11 +102,7 @@ const components = {
     variants: {
       scheduler: {
         field: {
-          backgroundColor: "#0000000a",
           fontWeight: 500,
-          _placeholder: {
-            color: "#00000030",
-          },
         },
       },
     },
@@ -120,16 +116,16 @@ const breakpoints = {
   xl: "1200px",
 };
 
-const font = {
-  body: `Poppins, Helvetica, sans-serif`,
-  heading: `Poppins, Helvetica, sans-serif`,
+const fonts = {
+  body: `Inter, Helvetica, sans-serif`,
+  heading: `Inter, Helvetica, sans-serif`,
 };
 
 const overrides = {
   config,
   colors,
   components,
-  font,
+  fonts,
   styles,
   breakpoints,
 };
