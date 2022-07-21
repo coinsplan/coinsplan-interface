@@ -11,7 +11,7 @@ interface IWalletProvider {
 const WalletProvider: FC<IWalletProvider> = ({ children }) => {
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} theme={lightTheme()}>
+      <RainbowKitProvider chains={chains} theme={lightTheme()} initialChain={chains[0]}>
         {children}
       </RainbowKitProvider>
     </WagmiConfig>
